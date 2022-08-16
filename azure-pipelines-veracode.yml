@@ -1,0 +1,77 @@
+# Copyright © 2022 TomTom NV. All rights reserved.
+#
+# This software is the proprietary copyright of TomTom NV and its subsidiaries and may be
+# used for internal evaluation purposes or commercial use strictly subject to separate
+# license agreement between you and TomTom NV. If you are the licensee, you are only permitted
+# to use this software in accordance with the terms of your license agreement. If you are
+# not the licensee, you are not authorized to use this software in any manner and should
+# immediately return or destroy it.
+
+# Azure pipelines documentation is available at
+# https://aka.ms/yaml
+
+pool: 'Private Cloud Small'
+
+trigger: none
+
+resources:
+  pipelines:
+    - pipeline: veracode_scan_exampleapp
+      source: IndiGO Docs
+      trigger:
+        branches:
+          include:
+            - master
+            - releases/*
+        stages:
+          - Build
+  containers:
+    # Docker containers with run options for private cloud agents and shared Gradle caches.
+    - container: docker_indigo_build
+      image: 'indigo/build:$(dockerImageVersion)'
+      endpoint: 'IVI-Docker'
+      options: $(dockerImageDefaultOptions)
+  repositories:
+    - repository: devops-templates
+      type: git
+      name: IVI/devops-templates
+      ref: refs/tags/2.2.6
+
+variables:
+  - template: .azure-templates/variables.yml
+  - template: private-pool-agents/private-cloud-agents.yml@devops-templates
+
+stages:
+  - stage: VeracodeScan
+    displayName: Veracode scan for Example app APK
+    jobs:
+      - job: Veracode
+        timeoutInMinutes: 360
+        displayName: Download Example app APK and Scan
+        container: 'docker_indigo_build'
+        steps:
+          - task: DownloadPipelineArtifact@2
+            displayName: Download example app debug APK
+            inputs:
+              buildType: 'specific'
+              project: 'IVI'
+              definition: '1986'
+              specificBuildWithTriggering: true
+              buildVersionToDownload: 'specific'
+              runId: $(resources.pipeline.veracode_scan_exampleapp.runID)
+              branchName: 'refs/heads/master'
+              allowPartiallySucceededBuilds: true
+              artifact: 'builds'
+              targetPath: '$(Build.ArtifactStagingDirectory)/APK'
+          - template: build/get-version-from-apk.yml@devops-templates
+            parameters:
+              apkDirectory: '$(Build.ArtifactStagingDirectory)/APK'
+              apkNamePattern: '*x86_64-debug*.apk'
+          - template: veracode/veracode-scan.yml@devops-templates
+            parameters:
+              waitTimeIntervalInSeconds: 300
+              applicationName: ivi-example-app
+              applicationVersion: $(productVersion)
+              scanFilePath: $(scanFilePath)
+              failBuildOnPolicyFail: true
+              maximumWaitTime: 150

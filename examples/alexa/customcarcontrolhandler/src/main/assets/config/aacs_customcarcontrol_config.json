@@ -1,0 +1,97 @@
+{
+  "aacs.localVoiceControl": {
+    "CarControl": {
+      "CustomAssetsFilePath": "/data/user/10/com.example.ivi.example.alexa.app/files/custom_assets.json"
+    }
+  },
+  "aacs.carControl": {
+    "assets": {
+      "customAssetsPath": "/data/user/10/com.example.ivi.example.alexa.app/files/custom_assets.json"
+    },
+    "endpoints": [
+      {
+        "endpointId": "default.custom_device",
+        "endpointResources": {
+          "friendlyNames": [
+            {
+              "@type": "asset",
+              "value": {
+                "assetId": "My.Alexa.Automotive.DeviceName.CustomDevice"
+              }
+            }
+          ]
+        },
+        "capabilities": [
+          {
+            "type": "AlexaInterface",
+            "interface": "Alexa.PowerController",
+            "version": "3",
+            "properties": {
+              "proactivelyReported": false,
+              "retrievable": false,
+              "supported": [
+                {
+                  "name": "powerState"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "endpointId": "default.light",
+        "endpointResources": {
+          "friendlyNames": [
+            {
+              "@type": "asset",
+              "value": {
+                "assetId": "Alexa.Automotive.DeviceName.Light"
+              }
+            },
+            {
+              "@type": "asset",
+              "value": {
+                "assetId": "Alexa.Automotive.DeviceName.DomeLight"
+              }
+            },
+            {
+              "@type": "asset",
+              "value": {
+                "assetId": "Alexa.Automotive.DeviceName.CabinLight"
+              }
+            }
+          ]
+        },
+        "capabilities": [
+          {
+            "type": "AlexaInterface",
+            "interface": "Alexa.PowerController",
+            "version": "3",
+            "properties": {
+              "proactivelyReported": false,
+              "retrievable": false,
+              "supported": [
+                {
+                  "name": "powerState"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "zones": [
+      {
+        "zoneId": "zone.default",
+        "members": [
+          {
+            "endpointId": "default.light"
+          },
+          {
+            "endpointId": "default.custom_device"
+          }
+        ]
+      }
+    ]
+  }
+}

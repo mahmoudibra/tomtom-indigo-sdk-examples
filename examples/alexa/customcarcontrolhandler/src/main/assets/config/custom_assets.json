@@ -24,6 +24,25 @@
           ]
         }
       ]
+    },
+    {
+      "assetId": "My.Alexa.Automotive.DeviceName.Sensor",
+      "values": [
+        {
+          "locales": [
+            "en-US",
+            "en-CA",
+            "en-IN",
+            "es-MX",
+            "es-US",
+            "fr-CA",
+            "de-DE",
+            "en-GB",
+            "hi-IN"
+          ],
+          "defaultValue": "sensor"
+        }
+      ]
     }
   ]
 }

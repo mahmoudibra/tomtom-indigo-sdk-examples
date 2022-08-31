@@ -25,17 +25,15 @@ import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQ
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactOrderBy.ContactItemOrder
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactOrderBy.ContactItemOrder.COMPANY_NAME_ASC
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactOrderBy.ContactItemOrder.FAMILY_NAME_ASC
-import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactOrderBy.ContactItemOrder.FIRST_NAME_ASC
+import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactOrderBy.ContactItemOrder.GIVEN_NAME_ASC
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactOrderBy.ContactItemOrder.PRIMARY_SORT_KEY
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactOrderBy.ContactItemOrderBy
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.All
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.Favorites
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.FindContactByContactId
-import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.FindContactsByCompanyName
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.FindContactsByDisplayNames
-import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.FindContactsByFamilyName
-import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.FindContactsByFirstName
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.FindContactsByPhoneNumber
+import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.FindContactsBySearchKey
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.FindContactsBySource
 import com.tomtom.ivi.platform.contacts.api.service.contacts.ContactsDataSourceQuery.ContactSelection.Groups
 import com.tomtom.ivi.platform.framework.api.ipc.iviservice.datasource.IviPagingSource
@@ -81,36 +79,12 @@ internal class MutableCustomContactsDataSource :
                         it.toFirstLetter()
                     }.map { ContactGroup(it.key.toString(), it.value.size) }
                 }
-                is FindContactsByFirstName -> {
-                    contacts.values.filter {
-                        it.givenName.startsWith(
-                            (query.selection as FindContactsByFirstName).firstName,
-                            true
-                        )
-                    }.toContactItem()
-                }
                 is FindContactsByDisplayNames -> {
                     contacts.values.filter { contact ->
                         (query.selection as FindContactsByDisplayNames).displayNames
                             .any { displayName ->
                                 contact.displayName.startsWith(displayName, true)
                             }
-                    }.toContactItem()
-                }
-                is FindContactsByFamilyName -> {
-                    contacts.values.filter {
-                        it.familyName.startsWith(
-                            (query.selection as FindContactsByFamilyName).familyName,
-                            true
-                        )
-                    }.toContactItem()
-                }
-                is FindContactsByCompanyName -> {
-                    contacts.values.filter {
-                        it.companyName.startsWith(
-                            (query.selection as FindContactsByCompanyName).companyName,
-                            true
-                        )
                     }.toContactItem()
                 }
                 is FindContactsByPhoneNumber -> {
@@ -133,6 +107,11 @@ internal class MutableCustomContactsDataSource :
                         (query.selection as FindContactByContactId).contactId == it.contactId
                     }.toContactItem()
                 }
+                is FindContactsBySearchKey -> {
+                    findMatchingContacts(
+                        (query.selection as FindContactsBySearchKey).searchKey
+                    )
+                }
             }.let { contactElements ->
                 orderContactElements(query.orderBy, contactElements)
             }
@@ -141,26 +120,26 @@ internal class MutableCustomContactsDataSource :
 
     private fun sortContactItems(
         order: ContactItemOrder,
-        contactElements: List<ContactsDataSourceElement>
+        contactElements: List<ContactItem>
     ): List<ContactsDataSourceElement> = when (order) {
         COMPANY_NAME_ASC -> {
             contactElements.sortedBy {
-                (it as? ContactItem)?.contact?.companyName
+                it.contact.companyName.ifEmpty { it.contact.displayName }
             }
         }
         FAMILY_NAME_ASC -> {
             contactElements.sortedBy {
-                (it as? ContactItem)?.contact?.familyName
+                it.contact.familyName.ifBlank { it.contact.displayName }
             }
         }
-        FIRST_NAME_ASC -> {
+        GIVEN_NAME_ASC -> {
             contactElements.sortedBy {
-                (it as? ContactItem)?.contact?.givenName
+                it.contact.givenName.ifBlank { it.contact.displayName }
             }
         }
         PRIMARY_SORT_KEY -> {
             contactElements.sortedBy {
-                (it as? ContactItem)?.contact?.primarySortKey
+                it.contact.primarySortKey.ifBlank { it.contact.displayName }
             }
         }
     }
@@ -186,7 +165,7 @@ internal class MutableCustomContactsDataSource :
         is ContactItemOrderBy -> {
             sortContactItems(
                 orderBy.order,
-                contactElements
+                contactElements.filterIsInstance<ContactItem>()
             )
         }
         is ContactGroupOrderBy -> {
@@ -197,6 +176,24 @@ internal class MutableCustomContactsDataSource :
         }
         else -> contactElements
     }
+
+    private fun findMatchingContacts(key: String) =
+        contacts.values.filter {
+            var contactFound = false
+            if (it.givenName.isNotBlank()) {
+                contactFound = it.givenName.startsWith(key, true)
+            }
+            if (it.familyName.isNotBlank() && !contactFound) {
+                contactFound = it.familyName.startsWith(key, true)
+            }
+            if (it.companyName.isNotBlank() && !contactFound) {
+                contactFound = it.companyName.startsWith(key, true)
+            }
+            if (it.displayName.isNotBlank() && !contactFound) {
+                contactFound = it.displayName.startsWith(key, true)
+            }
+            contactFound
+        }.toContactItem()
 
     /**
      * Groups contact by first letter. Contact starting with no letter character are grouped in

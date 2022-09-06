@@ -4,8 +4,8 @@
 
 This is an example demonstrating how to control media playback with a customized UI visible when
 not browsing for media in the stock media player UI.
-The stock media player UI uses a process panel to display what is currently being played, but it
-can be disabled when necessary: for example when media controls are always present in the UI.
+The stock media player UI uses a main process panel to display what is currently being played, but 
+it can be disabled when necessary: for example when media controls are always present in the UI.
 
 The example demonstrates concepts explained in the following guides from the TomTom IndiGO
 documentation:

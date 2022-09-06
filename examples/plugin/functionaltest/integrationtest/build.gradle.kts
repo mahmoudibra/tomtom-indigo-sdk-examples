@@ -9,10 +9,14 @@
  * immediately return or destroy it.
  */
 
+import com.tomtom.ivi.platform.gradle.api.common.annotations.EXPERIMENTAL_API_USAGE
 import com.tomtom.ivi.platform.gradle.api.common.iviapplication.config.FrontendConfig
 import com.tomtom.ivi.platform.gradle.api.common.iviapplication.config.IviInstanceIdentifier
+import com.tomtom.ivi.platform.gradle.api.common.iviapplication.config.IviPlatform
 import com.tomtom.ivi.platform.gradle.api.common.iviapplication.config.IviServiceHostConfig
 import com.tomtom.ivi.platform.gradle.api.common.iviapplication.config.MenuItemConfig
+import com.tomtom.ivi.platform.gradle.api.defaults.config.testing.activityTestGroup
+
 import com.tomtom.ivi.platform.gradle.api.framework.config.ivi
 
 plugins {
@@ -33,7 +37,11 @@ ivi {
         enabled = true
         iviInstances {
             create(IviInstanceIdentifier.default) {
-                applyGroups { includeDefaultGroups() }
+                applyGroups {
+                    includeDefaultGroups()
+                    @Suppress(EXPERIMENTAL_API_USAGE)
+                    include(IviPlatform.activityTestGroup)
+                }
                 frontends {
                     add(accountFrontend)
                 }
@@ -43,6 +51,10 @@ ivi {
             }
         }
         services {
+            applyGroups {
+                @Suppress(EXPERIMENTAL_API_USAGE)
+                include(IviPlatform.activityTestGroup)
+            }
             addHosts(accountsServiceHosts)
         }
     }

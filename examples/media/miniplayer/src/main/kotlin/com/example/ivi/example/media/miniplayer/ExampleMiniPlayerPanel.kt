@@ -16,11 +16,11 @@ import com.tomtom.ivi.appsuite.media.api.service.core.MediaService
 import com.tomtom.ivi.appsuite.media.api.service.core.createApi
 import com.tomtom.ivi.platform.frontend.api.common.frontend.FrontendContext
 import com.tomtom.ivi.platform.frontend.api.common.frontend.IviFragment
+import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.MainProcessPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.OverlayPanel
-import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.ProcessPanel
 
 /**
- * This example is implemented as a normal [ProcessPanel], but it is possible to reposition and
+ * This example is implemented as a normal [MainProcessPanel], but it is possible to reposition and
  * resize the panel to anywhere on the UI by changing it to another type, such as an [OverlayPanel]
  * or a custom panel type.
  *
@@ -32,7 +32,7 @@ import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.ProcessPanel
 internal class ExampleMiniPlayerPanel(
     frontendContext: FrontendContext,
     val mediaConfiguration: MediaConfiguration
-) : ProcessPanel(frontendContext, Priority.LOW) {
+) : MainProcessPanel(frontendContext, Priority.LOW) {
 
     /**
      * The connection to the [MediaService] is here, and not in the [ExampleMiniPlayerViewModel],

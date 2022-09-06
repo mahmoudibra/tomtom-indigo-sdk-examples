@@ -62,7 +62,7 @@ internal class CustomCarControlHandlerService(
      * - `SetRangeControllerValue`
      * - `SetToggleControllerValue`
      *
-     * The `payload.controllerType` field can be used to differentiate among them.
+     * The `payload.capabilityType` field can be used to differentiate among them.
      */
     object SetControllerValueMessageSerializer :
         JsonContentPolymorphicSerializer<SetControllerValueIncomingMessageBase>(
@@ -72,7 +72,7 @@ internal class CustomCarControlHandlerService(
             DeserializationStrategy<out SetControllerValueIncomingMessageBase> =
             when (
                 element.jsonObject[JSON_KEY_PAYLOAD]?.jsonObject?.get(
-                    JSON_KEY_CONTROLLER_TYPE
+                    JSON_KEY_CAPABILITY_TYPE
                 )?.jsonPrimitive?.content
             ) {
                 JSON_VALUE_CONTROLLER_MODE ->
@@ -89,7 +89,7 @@ internal class CustomCarControlHandlerService(
 
     /**
      * Data class representation of the
-     * [CarControl](https://alexa.github.io/alexa-auto-sdk/docs/sdk-docs/modules/car-control/aasb-docs/CarControl/)
+     * [CarControl](https://alexa.github.io/alexa-auto-sdk/docs/aasb/car-control/CarControl)
      * AASB messages.
      */
 
@@ -106,9 +106,9 @@ internal class CustomCarControlHandlerService(
 
     @Serializable
     data class SetModeControllerValueIncomingMessagePayload(
-        val controllerType: String,
+        val capabilityType: String,
         val endpointId: String,
-        val controllerId: String,
+        val instanceId: String,
         val value: String
     )
 
@@ -120,7 +120,7 @@ internal class CustomCarControlHandlerService(
 
     @Serializable
     data class SetPowerControllerValueIncomingMessagePayload(
-        val controllerType: String,
+        val capabilityType: String,
         val endpointId: String,
         val turnOn: Boolean
     )
@@ -133,9 +133,9 @@ internal class CustomCarControlHandlerService(
 
     @Serializable
     data class SetRangeControllerValueIncomingMessagePayload(
-        val controllerType: String,
+        val capabilityType: String,
         val endpointId: String,
-        val controllerId: String,
+        val instanceId: String,
         val value: Double
     )
 
@@ -147,9 +147,9 @@ internal class CustomCarControlHandlerService(
 
     @Serializable
     data class SetToggleControllerValueIncomingMessagePayload(
-        val controllerType: String,
+        val capabilityType: String,
         val endpointId: String,
-        val controllerId: String,
+        val instanceId: String,
         val turnOn: Boolean
     )
 
@@ -161,6 +161,69 @@ internal class CustomCarControlHandlerService(
 
     @Serializable
     data class SetControllerValueOutgoingMessagePayload(
+        val success: Boolean
+    )
+
+    object AdjustControllerValueMessageSerializer :
+        JsonContentPolymorphicSerializer<AdjustControllerValueIncomingMessageBase>(
+            AdjustControllerValueIncomingMessageBase::class
+        ) {
+        override fun selectDeserializer(element: JsonElement):
+            DeserializationStrategy<out AdjustControllerValueIncomingMessageBase> =
+            when (
+                element.jsonObject[JSON_KEY_PAYLOAD]?.jsonObject?.get(
+                    JSON_KEY_CAPABILITY_TYPE
+                )?.jsonPrimitive?.content
+            ) {
+                JSON_VALUE_CONTROLLER_MODE ->
+                    AdjustModeControllerValueIncomingMessage.serializer()
+                JSON_VALUE_CONTROLLER_RANGE ->
+                    AdjustRangeControllerValueIncomingMessage.serializer()
+                else -> throw IllegalArgumentException("Unknown controller type: $element")
+            }
+    }
+
+    @Serializable(with = AdjustControllerValueMessageSerializer::class)
+    sealed class AdjustControllerValueIncomingMessageBase {
+        abstract val header: Header
+    }
+
+    @Serializable
+    data class AdjustModeControllerValueIncomingMessage(
+        override val header: Header,
+        val payload: AdjustModeControllerValueIncomingMessagePayload
+    ) : AdjustControllerValueIncomingMessageBase()
+
+    @Serializable
+    data class AdjustModeControllerValueIncomingMessagePayload(
+        val capabilityType: String,
+        val endpointId: String,
+        val instanceId: String,
+        val delta: Int
+    )
+
+    @Serializable
+    data class AdjustRangeControllerValueIncomingMessage(
+        override val header: Header,
+        val payload: AdjustRangeControllerValueIncomingMessagePayload
+    ) : AdjustControllerValueIncomingMessageBase()
+
+    @Serializable
+    data class AdjustRangeControllerValueIncomingMessagePayload(
+        val capabilityType: String,
+        val endpointId: String,
+        val instanceId: String,
+        val delta: Double
+    )
+
+    @Serializable
+    data class AdjustControllerValueOutgoingMessage(
+        val header: Header,
+        val payload: AdjustControllerValueOutgoingMessagePayload
+    )
+
+    @Serializable
+    data class AdjustControllerValueOutgoingMessagePayload(
         val success: Boolean
     )
 
@@ -234,7 +297,9 @@ internal class CustomCarControlHandlerService(
     ): Boolean =
         when (action) {
             Action.CarControl.SET_CONTROLLER_VALUE -> handleSetControllerValue(messageContents)
-            // We are only interested in handling `SetPowerControllerValue` incoming messages.
+            Action.CarControl.ADJUST_CONTROLLER_VALUE -> handleAdjustControllerValue(messageContents)
+            // We are only interested in handling `SET_CONTROLLER_VALUE` and
+            // `ADJUST_CONTROLLER_VALUE` incoming messages.
             // We return `false` for any other action, so that the message can be forwarded to other
             // CarControl message handlers.
             else -> false
@@ -249,24 +314,113 @@ internal class CustomCarControlHandlerService(
             return when (setMessage) {
                 is SetPowerControllerValueIncomingMessage ->
                     setPowerControllerValue(setMessage)
-                // We are only interested in handling `SetPowerControllerValue` incoming messages.
-                // We return `false` for any other SetXXXXControllerValue message, so that the
-                // message can be forwarded to other CarControl message handlers.
-                else -> false
+                is SetRangeControllerValueIncomingMessage ->
+                    setRangeControllerValue(setMessage)
+                is SetModeControllerValueIncomingMessage ->
+                    setModeControllerValue(setMessage)
+                is SetToggleControllerValueIncomingMessage ->
+                    setToggleControllerValue(setMessage)
             }
         }
         return false
     }
 
-    private fun setPowerControllerValue(message: SetPowerControllerValueIncomingMessage): Boolean {
-        return when (message.payload.endpointId.toDeviceName()) {
+    private fun handleAdjustControllerValue(message: String): Boolean {
+        parseAasbMessage<AdjustControllerValueIncomingMessageBase>(
+            jsonParser,
+            message
+        )?.let { adjustMessage ->
+            tracer.adjustControllerValueMessageReceived(adjustMessage)
+
+            return when (adjustMessage) {
+                is AdjustRangeControllerValueIncomingMessage ->
+                    adjustRangeControllerValue(adjustMessage)
+                is AdjustModeControllerValueIncomingMessage ->
+                    adjustModeControllerValue(adjustMessage)
+            }
+        }
+        return false
+    }
+
+    /**
+     * SetPowerControllerValue message handling: can be triggered by saying:
+     * - "Turn on the light"
+     * - "Turn off the custom device"
+     */
+    private fun setPowerControllerValue(message: SetPowerControllerValueIncomingMessage): Boolean =
+        when (message.payload.endpointId.toDeviceName()) {
             LIGHT_ID,
             CUSTOM_DEVICE_ID -> {
+                val turnOn = message.payload.turnOn
+                tracer.d("Setting power value $turnOn for endpoint ${message.payload.endpointId}.")
                 sendSetControllerValueReply(message.header.id, true)
                 true
             }
             // We are only interested in handling `SetPowerControllerValue` messages for the "light"
             // and the "custom_device" endpoint devices.
+            // We return `false` for any other device, so that the message can be forwarded to other
+            // CarControl message handlers.
+            else -> false
+        }
+
+    /**
+     * setRangeControllerValue message handling: can be triggered by saying:
+     * - "Set the light brightness to 5"
+     * - "Change the brightness of the light to maximum"
+     */
+    private fun setRangeControllerValue(message: SetRangeControllerValueIncomingMessage): Boolean =
+        when (message.payload.endpointId.toDeviceName()) {
+            LIGHT_ID -> {
+                val rangeValue = message.payload.value
+                val instanceId = message.payload.instanceId
+                tracer.d("Setting range value $rangeValue for light instance $instanceId.")
+                sendSetControllerValueReply(message.header.id, true)
+                true
+            }
+            // We are only interested in handling `SetRangeControllerValue` messages for the "light"
+            // endpoint devices.
+            // We return `false` for any other device, so that the message can be forwarded to other
+            // CarControl message handlers.
+            else -> false
+        }
+
+    /**
+     * setModeControllerValue message handling: can be triggered by saying:
+     * - "Set the light color to blue"
+     * - "Change the color of the light to red"
+     */
+    private fun setModeControllerValue(message: SetModeControllerValueIncomingMessage): Boolean {
+        return when (message.payload.endpointId.toDeviceName()) {
+            LIGHT_ID -> {
+                val modeValue = message.payload.value
+                val instanceId = message.payload.instanceId
+                tracer.d("Setting mode value $modeValue for light instance $instanceId.")
+                sendSetControllerValueReply(message.header.id, true)
+                true
+            }
+            // We are only interested in handling `SetModeControllerValue` messages for the "light"
+            // endpoint devices.
+            // We return `false` for any other device, so that the message can be forwarded to other
+            // CarControl message handlers.
+            else -> false
+        }
+    }
+
+    /**
+     * setToggleControllerValue message handling: can be triggered by saying:
+     * - "Turn on the light sensor"
+     */
+    private fun setToggleControllerValue(message: SetToggleControllerValueIncomingMessage): Boolean {
+        return when (message.payload.endpointId.toDeviceName()) {
+            LIGHT_ID -> {
+                val turnOn = message.payload.turnOn
+                val instanceId = message.payload.instanceId
+                tracer.d("Setting toggle value $turnOn for light instance $instanceId.")
+                sendSetControllerValueReply(message.header.id, true)
+                true
+            }
+            // We are only interested in handling `setToggleControllerValue` messages for the
+            // "light" endpoint devices.
             // We return `false` for any other device, so that the message can be forwarded to other
             // CarControl message handlers.
             else -> false
@@ -290,6 +444,64 @@ internal class CustomCarControlHandlerService(
     }
 
     /**
+     * adjustRangeControllerValue message handling: can be triggered by saying
+     * - "Increase the light brightness"
+     * - "Decrease the light brightness by 2"
+     */
+    private fun adjustRangeControllerValue(message: AdjustRangeControllerValueIncomingMessage): Boolean =
+        when (message.payload.endpointId.toDeviceName()) {
+            LIGHT_ID -> {
+                val deltaValue = message.payload.delta
+                val instanceId = message.payload.instanceId
+                tracer.d("Adjusting light instance $instanceId by delta value $deltaValue.")
+                sendAdjustControllerValueReply(message.header.id, true)
+                true
+            }
+            // We are only interested in handling `AdjustRangeControllerValue` messages for the
+            // "light" endpoint devices.
+            // We return `false` for any other device, so that the message can be forwarded to other
+            // CarControl message handlers.
+            else -> false
+        }
+
+    /**
+     * adjustModeControllerValue message handling: can be triggered by saying
+     * - "Increase the light color"
+     * Only available if the "ordered" field in the capability configuration is `true`.
+     */
+    private fun adjustModeControllerValue(message: AdjustModeControllerValueIncomingMessage): Boolean =
+        when (message.payload.endpointId.toDeviceName()) {
+            LIGHT_ID -> {
+                val deltaValue = message.payload.delta
+                val instanceId = message.payload.instanceId
+                tracer.i("Adjusting light instance $instanceId by delta value $deltaValue.")
+                sendAdjustControllerValueReply(message.header.id, true)
+                true
+            }
+            // We are only interested in handling `AdjustModeControllerValue` messages for the
+            // "light" endpoint devices.
+            // We return `false` for any other device, so that the message can be forwarded to other
+            // CarControl message handlers.
+            else -> false
+        }
+
+    private fun sendAdjustControllerValueReply(messageId: String, success: Boolean) {
+        val messageToSend = AdjustControllerValueOutgoingMessage(
+            createAasbReplyHeader(
+                messageId,
+                Topic.CAR_CONTROL,
+                Action.CarControl.ADJUST_CONTROLLER_VALUE
+            ),
+            AdjustControllerValueOutgoingMessagePayload(success)
+        )
+        aacsSender.sendMessage(
+            jsonParser.encodeToString(messageToSend),
+            Topic.CAR_CONTROL,
+            Action.CarControl.ADJUST_CONTROLLER_VALUE
+        )
+    }
+
+    /**
      * Returns the Alexa device name from an endpoint ID.
      * The format of an endpoint ID is either "zone.deviceName" for zoned properties or just
      * "deviceName" for zoneless properties.
@@ -308,7 +520,7 @@ internal class CustomCarControlHandlerService(
 
     /**
      * There is no CarControl event or request that needs to be sent periodically while AACS is
-     * active, so [onEnginesStarted] can just be an empty implementation.
+     * active, so [onEnginesStopped] can just be an empty implementation.
      */
     override suspend fun onEnginesStopped() {}
 
@@ -320,8 +532,8 @@ internal class CustomCarControlHandlerService(
         @TraceLogLevel(TraceLog.LogLevel.DEBUG)
         fun setControllerValueMessageReceived(payload: SetControllerValueIncomingMessageBase)
 
-        @TraceLogLevel(TraceLog.LogLevel.WARN)
-        fun unknownControllerId()
+        @TraceLogLevel(TraceLog.LogLevel.DEBUG)
+        fun adjustControllerValueMessageReceived(payload: AdjustControllerValueIncomingMessageBase)
     }
 
     private companion object {
@@ -332,7 +544,7 @@ internal class CustomCarControlHandlerService(
         const val JSON_VALUE_CONTROLLER_POWER = "POWER"
         const val JSON_VALUE_CONTROLLER_TOGGLE = "TOGGLE"
         const val JSON_VALUE_CONTROLLER_RANGE = "RANGE"
-        const val JSON_KEY_CONTROLLER_TYPE = "controllerType"
+        const val JSON_KEY_CAPABILITY_TYPE = "capabilityType"
         const val JSON_KEY_PAYLOAD = "payload"
 
         const val LIGHT_ID = "light"

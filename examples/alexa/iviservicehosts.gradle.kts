@@ -64,3 +64,19 @@ val customCarControlHandlerServiceHost by extra {
         )
     )
 }
+
+val customEqualizerControllerHandlerServiceHost by extra {
+    IviServiceHostConfig(
+        serviceHostBuilderName = "CustomEqualizerControllerHandlerServiceHostBuilder",
+        implementationModule = ExampleModuleReference("examples_alexa_customequalizercontrollerhandler"),
+        interfaces = listOf(
+            IviServiceInterfaceConfig(
+                serviceName = "AlexaHandlerService",
+                serviceId = "com.example.ivi.example.alexa.customequalizercontroller",
+                serviceApiModule = IviPlatformModuleReference(
+                    "platform_alexa_api_service_alexahandler"
+                )
+            )
+        )
+    )
+}

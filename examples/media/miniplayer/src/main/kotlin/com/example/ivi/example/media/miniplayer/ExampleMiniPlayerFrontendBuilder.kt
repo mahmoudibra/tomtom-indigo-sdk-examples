@@ -19,14 +19,14 @@ import com.tomtom.ivi.platform.frontend.api.common.frontend.Frontend
 import com.tomtom.ivi.platform.frontend.api.common.frontend.FrontendBuilder
 import com.tomtom.ivi.platform.frontend.api.common.frontend.FrontendContext
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.ExpandedProcessPanel
-import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.ProcessPanel
+import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.MainProcessPanel
 
 /**
  * This [FrontendBuilder] uses the [MediaPolicyFrontendExtension]s from the IVI Gradle configuration
  * of the media frontend to customize the media sources exactly as the stock media player UI does.
  *
  * It is convenient to customize visual and interaction aspects of the stock media player UI, such
- * as the browsing experience, the media playback [ProcessPanel], or the media
+ * as the browsing experience, the media playback [MainProcessPanel], or the media
  * [ExpandedProcessPanel].
  *
  * However, when making a completely new media player frontend to replace the stock one, it will be

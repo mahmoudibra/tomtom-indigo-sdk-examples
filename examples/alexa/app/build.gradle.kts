@@ -18,12 +18,13 @@ import com.tomtom.ivi.platform.gradle.api.framework.config.ivi
 plugins {
     id("com.tomtom.ivi.product.defaults.core")
     id("com.tomtom.ivi.appsuite.alexa.defaults.alexa")
-    id("com.tomtom.ivi.appsuite.alexa.defaults.internal-config")
+    id("com.tomtom.ivi.appsuite.alexa.defaults.config")
 }
 
 apply(from = rootProject.file("examples/alexa/iviservicehosts.gradle.kts"))
 
 val customCarControlHandlerServiceHost: IviServiceHostConfig by project.extra
+val customEqualizerControllerHandlerServiceHost: IviServiceHostConfig by project.extra
 
 /**
  * IVI configuration for this example application.
@@ -50,6 +51,7 @@ ivi {
                 )
             }
             addHost(customCarControlHandlerServiceHost)
+            addHost(customEqualizerControllerHandlerServiceHost)
         }
     }
 }
@@ -63,4 +65,5 @@ android {
 dependencies {
     implementation(project(":examples_common"))
     implementation(project(":examples_alexa_customcarcontrolhandler"))
+    implementation(project(":examples_alexa_customequalizercontrollerhandler"))
 }

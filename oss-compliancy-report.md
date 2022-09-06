@@ -1,4 +1,4 @@
-# OSS report for TomTom _IndiGO SDK_ version 1.0.4103-1849
+# OSS report for TomTom _IndiGO SDK_ version 1.0.4110-1856
 
 TomTom will provide on request the source code of software licensed under GPL, LGPL and certain other open source licenses where this is a requirement of the applicable license terms.
 
@@ -38,16 +38,16 @@ This offer is valid for a period of three years from the date of distribution of
 | [Android Emoji2 Compat view helpers](https://developer.android.com/jetpack/androidx/releases/emoji2#1.0.0-alpha01) | 1.0.0 | Apache License 2.0 |
 | [Android KTX Core](https://github.com/android/android-ktx) | 1.7.0, 1.8.0 | Apache License 2.0 |
 | [Android Lifecycle Extensions](https://developer.android.com/topic/libraries/architecture/index.html) | 2.2.0 | Apache License 2.0 |
-| [Android Lifecycle Kotlin Extensions](https://developer.android.com/jetpack/androidx) | 2.2.0, 2.3.1, 2.4.1, 2.5.1 | Apache License 2.0 |
+| [Android Lifecycle Kotlin Extensions](https://developer.android.com/jetpack/androidx) | 2.4.1, 2.5.1 | Apache License 2.0 |
 | [Android Lifecycle LiveData](https://developer.android.com/topic/libraries/architecture/index.html) | 2.0.0, 2.2.0, 2.4.1, 2.5.1 | Apache License 2.0 |
 | [Android Lifecycle LiveData Core](https://developer.android.com/topic/libraries/architecture/index.html) | 2.0.0, 2.3.1, 2.4.1, 2.5.1 | Apache License 2.0 |
 | [Android Lifecycle Process](https://developer.android.com/topic/libraries/architecture/index.html) | 2.4.0, 2.5.1 | Apache License 2.0 |
-| [Android Lifecycle Runtime](https://developer.android.com/topic/libraries/architecture/index.html) | 2.3.1, 2.4.0, 2.4.1, 2.5.1 | Apache License 2.0 |
+| [Android Lifecycle Runtime](https://developer.android.com/topic/libraries/architecture/index.html) | 2.4.0, 2.4.1, 2.5.1 | Apache License 2.0 |
 | [Android Lifecycle Service](https://developer.android.com/topic/libraries/architecture/index.html) | 2.2.0, 2.4.1, 2.5.1 | Apache License 2.0 |
 | [Android Lifecycle ViewModel](https://developer.android.com/topic/libraries/architecture/index.html) | 2.0.0, 2.3.1, 2.5.1 | Apache License 2.0 |
 | [Android Lifecycle ViewModel Kotlin Extensions](http://developer.android.com/tools/extras/support-library.html) | 2.3.1, 2.5.1 | Apache License 2.0 |
 | [Android Lifecycle ViewModel with SavedState](https://developer.android.com/topic/libraries/architecture/index.html) | 2.3.1, 2.5.1 | Apache License 2.0 |
-| [Android Lifecycle-Common](https://developer.android.com/topic/libraries/architecture/index.html) | 2.3.1, 2.4.0, 2.4.1, 2.5.1 | Apache License 2.0 |
+| [Android Lifecycle-Common](https://developer.android.com/topic/libraries/architecture/index.html) | 2.4.0, 2.4.1, 2.5.1 | Apache License 2.0 |
 | [Android Lifecycle-Common for Java 8 Language](https://developer.android.com/topic/libraries/architecture/index.html) | 2.4.1, 2.5.1 | Apache License 2.0 |
 | [Android Multi-Dex Library](https://maven.google.com/androidx/multidex/multidex/) | 2.0.0 | Apache License 2.0 |
 | [Android Navigation Common](https://developer.android.com/topic/libraries/architecture/index.html) | 2.3.0, 2.4.2 | Apache License 2.0 |
@@ -92,7 +92,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [Android Support Library Sliding Pane Layout](http://developer.android.com/tools/extras/support-library.html) | 1.0.0, 1.2.0 | Apache License 2.0 |
 | [Android Support Library View Pager](http://developer.android.com/tools/extras/support-library.html) | 1.0.0 | Apache License 2.0 |
 | [Android Support Palette v7](http://developer.android.com/tools/extras/support-library.html) | 1.0.0 | Apache License 2.0 |
-| [Android Support RecyclerView v7](http://developer.android.com/tools/extras/support-library.html) | 1.2.0, 1.2.1 | Apache License 2.0 |
+| [Android Support RecyclerView v7](http://developer.android.com/tools/extras/support-library.html) | 1.2.1 | Apache License 2.0 |
 | [Android Support SQLite - Framework Implementation](https://developer.android.com/topic/libraries/architecture/index.html) | 2.2.0 | Apache License 2.0 |
 | [Android Support VectorDrawable](http://developer.android.com/tools/extras/support-library.html) | 1.0.1, 1.1.0 | Apache License 2.0 |
 | [Android Tracing](https://developer.android.com/topic/libraries/architecture/index.html) | 1.0.0 | Apache License 2.0 |
@@ -157,7 +157,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [Experimental annotation](https://developer.android.com/jetpack/androidx) | 1.1.0 | Apache License 2.0 |
 | [Extensions](http://tomtom.com/extensions) | 1.7.0 | Apache License 2.0 |
 | [fetlife/android](https://fetlife.com/android) | 1.0.0 | Unknown License |
-| [FindBugs jsr305](http://code.google.com/p/jsr-305) | 2.0.1, 3.0.2 | Apache License 2.0 |
+| [FindBugs jsr305](http://code.google.com/p/jsr-305) | 3.0.2 | Apache License 2.0 |
 | [flexbox-layout](https://github.com/google/flexbox-layout) | 2.0.1 | Apache License 2.0 |
 | [Flutter Fimber](https://github.com/magillus/flutter-fimber) | 0.6.4 | Apache License 2.0 |
 | [Fragment Kotlin Extensions](http://developer.android.com/tools/extras/support-library.html) | 1.4.1 | Apache License 2.0 |
@@ -167,7 +167,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [Glide Annotations](https://github.com/bumptech/glide) | 4.11.0 | (BSD 2-clause "Simplified" License AND Apache License 2.0) |
 | [Glide Disk LRU Cache Library](https://github.com/bumptech/glide) | 4.11.0 | (BSD 2-clause "Simplified" License AND Apache License 2.0) |
 | [Glide GIF Decoder Library](https://github.com/bumptech/glide) | 4.11.0 | (BSD 2-clause "Simplified" License AND Apache License 2.0) |
-| [google-gson](https://github.com/google/gson) | 2.8.9 | Apache License 2.0 |
+| [google-gson](https://github.com/google/gson) | 2.8.9, 2.9.1 | Apache License 2.0 |
 | [google/gnd-android]() | 20181012-snapshot-9ae5cae8 | Apache License 2.0 |
 | [google/ksp](https://github.com/google/ksp) | 1.4.30-M2-104-multiple-round-preview-20201223 | Apache License 2.0 |
 | [googlei18n/libphonenumber](https://github.com/googlei18n/libphonenumber) | v8.12.3 | Apache License 2.0 |
@@ -178,7 +178,6 @@ This offer is valid for a period of three years from the date of distribution of
 | [Guava: Google Core Libraries for Java](https://github.com/google/guava/wiki) | 30.1-android, 30.1.1-android, v27.0.1, v27.1, v28.2 | Apache License 2.0 |
 | [Hamcrest](http://hamcrest.org/) | 1.3, v2.2 | BSD 3-clause "New" or "Revised" License |
 | [ianout - a next generation 2d engine](http://sourceforge.net/projects/ianout) | IanOut Public Beta 3 | GNU General Public License v2.0 or later |
-| [ICU4J](http://icu-project.org) | 53.1 | ICU License |
 | [IoT Hub Java Device Client](http://azure.github.io/azure-iot-sdks/) | 1.34.2 | MIT License |
 | [J2ObjC Annotations](https://github.com/google/j2objc/) | 1.1, 1.3 | Apache License 2.0 |
 | [jansi](https://github.com/fusesource/jansi) | 2.4.0 | Apache License 2.0 |
@@ -201,18 +200,18 @@ This offer is valid for a period of three years from the date of distribution of
 | [jsoup](http://jsoup.org) | 1.12.2 | MIT License |
 | [JUnit](https://junit.org/junit5/) | r5.7.0-RC1 | Eclipse Public License 2.0 |
 | [Kotlin Libraries bill-of-materials](http://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
-| [Kotlin Stdlib](https://kotlinlang.org/) | 1.5.30, 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
-| [Kotlin Test Junit](https://kotlinlang.org/) | 1.6.21, 1.7.10 | Apache License 2.0 |
+| [Kotlin Stdlib](https://kotlinlang.org/) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
+| [Kotlin Test Junit](https://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
 | [kotlin-android-extensions-runtime](http://kotlinlang.org/tools/kotlin-android-extensions-runtime/) | 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
 | [kotlin-logging](https://github.com/MicroUtils/kotlin-logging) | 2.1.23 | Apache License 2.0 |
-| [kotlin-reflect](https://kotlinlang.org/) | 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
-| [kotlin-stdlib-common](http://kotlinlang.org/kotlin-stdlib-common/) | 1.5.30, 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
-| [kotlin-test](http://kotlinlang.org/kotlin-test-parent/kotlin-test/) | 1.6.21, 1.7.10 | Apache License 2.0 |
-| [kotlinx-coroutines-android](https://github.com/Kotlin/kotlinx.coroutines) | 1.5.1, 1.5.2, 1.6.3, 1.6.4 | Apache License 2.0 |
+| [kotlin-reflect](https://kotlinlang.org/) | 1.6.10, 1.7.10 | Apache License 2.0 |
+| [kotlin-stdlib-common](http://kotlinlang.org/kotlin-stdlib-common/) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
+| [kotlin-test](http://kotlinlang.org/kotlin-test-parent/kotlin-test/) | 1.7.10 | Apache License 2.0 |
+| [kotlinx-coroutines-android](https://github.com/Kotlin/kotlinx.coroutines) | 1.5.2, 1.6.3, 1.6.4 | Apache License 2.0 |
 | [kotlinx-coroutines-bom](https://github.com/Kotlin/kotlinx.coroutines) | 1.6.3, 1.6.4 | Apache License 2.0 |
-| [kotlinx-coroutines-core](https://github.com/Kotlin/kotlinx.coroutines) | 1.5.1, 1.5.2, 1.6.3, 1.6.4 | Apache License 2.0 |
+| [kotlinx-coroutines-core](https://github.com/Kotlin/kotlinx.coroutines) | 1.5.2, 1.6.3, 1.6.4 | Apache License 2.0 |
 | [kotlinx-coroutines-jdk8](https://github.com/Kotlin/kotlinx.coroutines/integration/kotlinx-coroutines-jdk8/) | 1.6.3 | Apache License 2.0 |
-| [kotlinx-coroutines-test](https://github.com/Kotlin/kotlinx.coroutines) | 1.5.1, 1.6.3 | Apache License 2.0 |
+| [kotlinx-coroutines-test](https://github.com/Kotlin/kotlinx.coroutines) | 1.6.3 | Apache License 2.0 |
 | [kotlinx-datetime](https://github.com/Kotlin/kotlinx-datetime) | 0.2.1 | Apache License 2.0 |
 | [kotlinx-serialization-core](https://github.com/Kotlin/kotlinx.serialization) | 1.3.3 | Apache License 2.0 |
 | [kotlinx-serialization-json](https://github.com/Kotlin/kotlinx.serialization) | 1.3.3 | Apache License 2.0 |
@@ -262,8 +261,8 @@ This offer is valid for a period of three years from the date of distribution of
 | [OpenLDAP](http://www.openldap.org/) | 0.3.1 | Open LDAP Public License v2.8 |
 | [opentrack](https://github.com/opentrack/opentrack) | opentrack-2.3-rc99p11 | ISC License |
 | [Org.eclipse.paho.client.mqttv3](https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.client.mqttv3) | 1.2.2 | Eclipse Public License 2.0 |
-| [org.jetbrains.kotlin:kotlin-stdlib-jdk7](https://kotlinlang.org/) | 1.5.30, 1.6.21, 1.7.10 | Apache License 2.0 |
-| [org.jetbrains.kotlin:kotlin-stdlib-jdk8](https://kotlinlang.org/) | 1.5.30, 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
+| [org.jetbrains.kotlin:kotlin-stdlib-jdk7](https://kotlinlang.org/) | 1.5.30, 1.7.10 | Apache License 2.0 |
+| [org.jetbrains.kotlin:kotlin-stdlib-jdk8](https://kotlinlang.org/) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
 | [Parcelize Runtime](https://kotlinlang.org/) | 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
 | [platform/dalvik dx](http://nexus.sonatype.org/oss-repository-hosting.html/dalvik-dx) | 9.0.0_r3 | Apache License 2.0 |
 | [pluginapi](http://robolectric.org) | 4.7.3 | MIT License |
@@ -298,8 +297,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [Sentry-Java for Android](https://github.com/getsentry/sentry-java/sentry-android) | 6.4.0 | MIT License |
 | [shadowapi](http://robolectric.org) | 4.7.3 | MIT License |
 | [SILGraphite: rendering non-roman scripts](http://sourceforge.net/projects/silgraphite) | 1.3.0, 1.3.12 | GNU Lesser General Public License v2.1 or later |
-| [Simple Logging Facade for Java (SLF4J)](http://www.slf4j.org/) | 1.7.36 | MIT License |
-| [SLF4J API Module](http://www.slf4j.org) | 1.7.32, 1.7.36 | MIT License |
+| [SLF4J API Module](http://www.slf4j.org) | 1.7.32 | MIT License |
 | [sqlite4java](http://code.google.com/p/sqlite4java/) | 1.0.392 | Apache License 2.0 |
 | [square-retrofit](http://square.github.io/retrofit/) | 2.9.0 | Apache License 2.0 |
 | [texlive-bin](https://www.tug.org/texlive/) | 2019.20190311.50335 | (LaTeX Project Public License v1.3c OR GNU General Public License v2.0 or later) |

@@ -1,4 +1,4 @@
-# OSS report for TomTom _IndiGO SDK_ version 1.0.4110-1856
+# OSS report for TomTom _IndiGO SDK_ version 1.0.4116-1863
 
 TomTom will provide on request the source code of software licensed under GPL, LGPL and certain other open source licenses where this is a requirement of the applicable license terms.
 
@@ -180,6 +180,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [ianout - a next generation 2d engine](http://sourceforge.net/projects/ianout) | IanOut Public Beta 3 | GNU General Public License v2.0 or later |
 | [IoT Hub Java Device Client](http://azure.github.io/azure-iot-sdks/) | 1.34.2 | MIT License |
 | [J2ObjC Annotations](https://github.com/google/j2objc/) | 1.1, 1.3 | Apache License 2.0 |
+| [JaCoCo](http://www.eclemma.org/jacoco/) | 0.8.7 | Eclipse Public License 2.0 |
 | [jansi](https://github.com/fusesource/jansi) | 2.4.0 | Apache License 2.0 |
 | [JavaWriter](http://github.com/square/javawriter/) | 2.1.1 | Apache License 2.0 |
 | [javax.inject:javax.inject](http://code.google.com/p/atinject/) | 1 | Apache License 2.0 |
@@ -199,8 +200,9 @@ This offer is valid for a period of three years from the date of distribution of
 | [JSON-java](https://github.com/stleary/JSON-java) | 20200518 | JSON License |
 | [jsoup](http://jsoup.org) | 1.12.2 | MIT License |
 | [JUnit](https://junit.org/junit5/) | r5.7.0-RC1 | Eclipse Public License 2.0 |
+| [Kotlin](http://kotlin.jetbrains.org) | 1.7.10 | Apache License 2.0 |
 | [Kotlin Libraries bill-of-materials](http://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
-| [Kotlin Stdlib](https://kotlinlang.org/) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
+| [Kotlin Stdlib](http://kotlin.jetbrains.org) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
 | [Kotlin Test Junit](https://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
 | [kotlin-android-extensions-runtime](http://kotlinlang.org/tools/kotlin-android-extensions-runtime/) | 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
 | [kotlin-logging](https://github.com/MicroUtils/kotlin-logging) | 2.1.23 | Apache License 2.0 |
@@ -213,8 +215,8 @@ This offer is valid for a period of three years from the date of distribution of
 | [kotlinx-coroutines-jdk8](https://github.com/Kotlin/kotlinx.coroutines/integration/kotlinx-coroutines-jdk8/) | 1.6.3 | Apache License 2.0 |
 | [kotlinx-coroutines-test](https://github.com/Kotlin/kotlinx.coroutines) | 1.6.3 | Apache License 2.0 |
 | [kotlinx-datetime](https://github.com/Kotlin/kotlinx-datetime) | 0.2.1 | Apache License 2.0 |
-| [kotlinx-serialization-core](https://github.com/Kotlin/kotlinx.serialization) | 1.3.3 | Apache License 2.0 |
-| [kotlinx-serialization-json](https://github.com/Kotlin/kotlinx.serialization) | 1.3.3 | Apache License 2.0 |
+| [kotlinx-serialization-core](https://github.com/Kotlin/kotlinx.serialization) | 1.3.3, 1.4.0 | Apache License 2.0 |
+| [kotlinx-serialization-json](https://github.com/Kotlin/kotlinx.serialization) | 1.3.3, 1.4.0 | Apache License 2.0 |
 | [ktor-client-android](https://github.com/ktorio/ktor) | 1.6.7 | Apache License 2.0 |
 | [ktor-client-core](https://github.com/ktorio/ktor) | 1.6.7 | Apache License 2.0 |
 | [ktor-client-core-jvm](https://github.com/ktorio/ktor) | 1.6.7 | Apache License 2.0 |
@@ -268,8 +270,9 @@ This offer is valid for a period of three years from the date of distribution of
 | [pluginapi](http://robolectric.org) | 4.7.3 | MIT License |
 | [pnpm](https://github.com/pnpm/pnpm) | 0.0.0-202117201839 | MIT License |
 | [Project Lombok](http://projectlombok.org) | 1.18.18 | MIT License |
-| [Protocol Buffer Java API](http://code.google.com/p/protobuf) | 3.17.1, 3.19.4 | BSD 3-clause "New" or "Revised" License |
+| [Protocol Buffer Java API](http://code.google.com/p/protobuf) | 3.19.1, 3.19.4 | BSD 3-clause "New" or "Revised" License |
 | [Protocol Buffer Java Util Package](https://developers.google.com/protocol-buffers/protobuf-java-util/) | 3.17.1 | BSD 3-clause "New" or "Revised" License |
+| [Protocol Buffers [Core]](https://developers.google.com/protocol-buffers/protobuf-kotlin/) | 3.19.1 | BSD 3-clause "New" or "Revised" License |
 | [Protocol Buffers [Lite]](https://developers.google.com/protocol-buffers/protobuf-lite/) | 3.0.1 | BSD 3-clause "New" or "Revised" License |
 | [Provisioning Device Client](http://azure.github.io/azure-iot-sdk-java/) | 1.11.2 | MIT License |
 | [Provisioning Security Provider](http://azure.github.io/azure-iot-sdk-java/) | 1.5.0 | MIT License |

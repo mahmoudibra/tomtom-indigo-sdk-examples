@@ -20,7 +20,7 @@ import com.example.ivi.example.systemui.custompaneltype.R
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.ControlCenterPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.PanelTransitionDestination
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.PanelTransitionSource
-import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.ProcessPanel
+import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.MainProcessPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.TaskPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.isTransitioningFrom
 import com.tomtom.ivi.platform.systemui.api.common.systemuihost.containercontrollers.TaskPanelSubContainer
@@ -171,7 +171,7 @@ internal class ExampleTaskPanelSubContainerManager(
     }
 
     private val PanelTransitionSource?.shouldHaveVerticalAnimation: Boolean
-        get() = isTransitioningFrom<ControlCenterPanel>() || isTransitioningFrom<ProcessPanel>()
+        get() = isTransitioningFrom<ControlCenterPanel>() || isTransitioningFrom<MainProcessPanel>()
 
     override fun setDismissalCallbacks(
         subContainer: ViewGroup,

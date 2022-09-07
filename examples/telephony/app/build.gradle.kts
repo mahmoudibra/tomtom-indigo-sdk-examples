@@ -34,16 +34,18 @@ val customContactsServiceHost by extra {
     )
 }
 
-val customRecentCallsServiceHost = IviServiceHostConfig(
-    serviceHostBuilderName = "CustomRecentCallsServiceHostBuilder",
-    implementationModule = ExampleModuleReference("examples_telephony_customrecentcalls"),
-    interfaces = listOf(
-        IviServiceInterfaceConfig(
-            serviceName = "RecentCallsService",
-            serviceApiModule = IviPlatformModuleReference("platform_recentcalls_api_service_recentcalls")
+val customRecentCallsServiceHost by extra {
+    IviServiceHostConfig(
+        serviceHostBuilderName = "CustomRecentCallsServiceHostBuilder",
+        implementationModule = ExampleModuleReference("examples_telephony_customrecentcalls"),
+        interfaces = listOf(
+            IviServiceInterfaceConfig(
+                serviceName = "RecentCallsService",
+                serviceApiModule = IviPlatformModuleReference("platform_recentcalls_api_service_recentcalls")
+            )
         )
     )
-)
+}
 
 /**
  * IVI configuration for this example application.

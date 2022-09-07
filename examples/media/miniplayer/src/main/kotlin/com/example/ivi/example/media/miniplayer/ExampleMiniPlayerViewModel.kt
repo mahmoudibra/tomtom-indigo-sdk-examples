@@ -22,8 +22,6 @@ import com.tomtom.ivi.appsuite.media.api.common.frontend.viewmodel.MediaPlayback
 import com.tomtom.ivi.appsuite.media.api.common.frontend.viewmodel.asMediaPlaybackParameters
 import com.tomtom.ivi.platform.frontend.api.common.frontend.viewmodels.FrontendViewModel
 import com.tomtom.tools.android.api.resourceresolution.string.DurationStringResolver
-import kotlin.time.DurationUnit
-import kotlin.time.toDuration
 
 internal class ExampleMiniPlayerViewModel(panel: ExampleMiniPlayerPanel) :
     FrontendViewModel<ExampleMiniPlayerPanel>(panel) {

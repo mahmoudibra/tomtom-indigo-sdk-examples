@@ -53,7 +53,6 @@ android {
 dependencies {
     implementation(project(":examples_common"))
 
-    implementation(indigoDependencies.tomtomToolsApiGraphics)
     implementation(indigoDependencies.tomtomToolsApiUicontrols)
     implementation(libraries.indigoAppsuiteMediaApiCommonFrontend)
     implementation(libraries.indigoPlatformFrontendApiCommonFrontend)

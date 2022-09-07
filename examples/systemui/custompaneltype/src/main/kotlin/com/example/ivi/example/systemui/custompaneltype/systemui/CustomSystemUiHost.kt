@@ -13,7 +13,7 @@ import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.ModalPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.NotificationPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.OverlayPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.PanelTypeSet
-import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.ProcessPanel
+import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.MainProcessPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.SearchPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.TaskPanel
 import com.tomtom.ivi.platform.frontend.api.common.frontend.panels.TaskProcessPanel
@@ -51,10 +51,10 @@ internal class CustomSystemUiHost(systemUiHostContext: SystemUiHostContext) :
         GuidancePanel::class,
         HomePanel::class,
         MainMenuPanel::class,
+        MainProcessPanel::class,
         ModalPanel::class,
         NotificationPanel::class,
         OverlayPanel::class,
-        ProcessPanel::class,
         SearchPanel::class
     )
 

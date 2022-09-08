@@ -1,4 +1,4 @@
-# OSS report for TomTom _IndiGO SDK_ version 1.0.4116-1863
+# OSS report for TomTom _IndiGO SDK_ version 1.0.4117-1864
 
 TomTom will provide on request the source code of software licensed under GPL, LGPL and certain other open source licenses where this is a requirement of the applicable license terms.
 
@@ -200,9 +200,9 @@ This offer is valid for a period of three years from the date of distribution of
 | [JSON-java](https://github.com/stleary/JSON-java) | 20200518 | JSON License |
 | [jsoup](http://jsoup.org) | 1.12.2 | MIT License |
 | [JUnit](https://junit.org/junit5/) | r5.7.0-RC1 | Eclipse Public License 2.0 |
-| [Kotlin](http://kotlin.jetbrains.org) | 1.7.10 | Apache License 2.0 |
+| [Kotlin](http://kotlin.jetbrains.org) | 1.5.30, 1.7.10 | Apache License 2.0 |
 | [Kotlin Libraries bill-of-materials](http://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
-| [Kotlin Stdlib](http://kotlin.jetbrains.org) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
+| [Kotlin Stdlib](http://kotlin.jetbrains.org) | 1.6.10, 1.7.10 | Apache License 2.0 |
 | [Kotlin Test Junit](https://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
 | [kotlin-android-extensions-runtime](http://kotlinlang.org/tools/kotlin-android-extensions-runtime/) | 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
 | [kotlin-logging](https://github.com/MicroUtils/kotlin-logging) | 2.1.23 | Apache License 2.0 |

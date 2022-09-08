@@ -50,7 +50,7 @@ internal class CustomRecentCallsService(iviServiceHostContext: IviServiceHostCon
         // Initialize the synchronization status.
         phoneBookSynchronizationStatus = PhoneBookSynchronizationStatus.NO_CONNECTED_DEVICES
         // Initialize the recentCallsDescending property with an empty list.
-        recentCallsDescending = listOf()
+        recentCallsDescending = emptyList()
         // Set the service to ready. Now clients can call the service's APIs.
         serviceReady = true
         // The source of recent calls is ready and synchronization starts.

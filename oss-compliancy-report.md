@@ -1,4 +1,4 @@
-# OSS report for TomTom _IndiGO SDK_ version 1.0.4117-1864
+# OSS report for TomTom _IndiGO SDK_ version 1.0.4130-1872
 
 TomTom will provide on request the source code of software licensed under GPL, LGPL and certain other open source licenses where this is a requirement of the applicable license terms.
 

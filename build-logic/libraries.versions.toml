@@ -14,7 +14,7 @@
 [versions]
 # TomTom IndiGO platform.
 # This line is being parsed using a regex. And should not be altered carelessly.
-indigoPlatform = "1.0.4117"
+indigoPlatform = "1.0.4130"
 
 [libraries]
 # Gradle plugins from the TomTom IndiGO platform & appsuite.
@@ -40,6 +40,7 @@ indigoPlatformFrameworkApiProductDefaultApplication = { module = "com.tomtom.ivi
 indigoPlatformFrameworkApiTestingIpc = { module = "com.tomtom.ivi.platform:platform_framework_api_testing_ipc", version.ref = "indigoPlatform" }
 indigoPlatformFrontendApiCommonFrontend = { module = "com.tomtom.ivi.platform:platform_frontend_api_common_frontend", version.ref = "indigoPlatform" }
 indigoPlatformFrontendApiCommonUicontrols = { module = "com.tomtom.ivi.platform:platform_frontend_api_common_uicontrols", version.ref = "indigoPlatform" }
+indigoPlatformFrontendApiTemplateCompactProcessPanel = { module = "com.tomtom.ivi.platform:platform_frontend_api_template_compactprocesspanel", version.ref = "indigoPlatform" }
 indigoPlatformFrontendApiTemplateNotificationPanel = { module = "com.tomtom.ivi.platform:platform_frontend_api_template_notificationpanel", version.ref = "indigoPlatform" }
 indigoPlatformFrontendApiTestingFrontend = { module = "com.tomtom.ivi.platform:platform_frontend_api_testing_frontend", version.ref = "indigoPlatform" }
 indigoPlatformMainmenuApiTestingFrontend = { module = "com.tomtom.ivi.platform:platform_mainmenu_api_testing_frontend", version.ref = "indigoPlatform" }

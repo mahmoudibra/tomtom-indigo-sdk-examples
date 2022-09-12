@@ -1,4 +1,4 @@
-# OSS report for TomTom _IndiGO SDK_ version 1.0.4130-1872
+# OSS report for TomTom _IndiGO SDK_ version 1.0.4144-1882
 
 TomTom will provide on request the source code of software licensed under GPL, LGPL and certain other open source licenses where this is a requirement of the applicable license terms.
 
@@ -155,7 +155,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [exoplayer-hls](https://repo.gradle.org/ui/native/jcenter/com/google/android/exoplayer/exoplayer-hls) | 2.13.3, 2.15.1 | Apache License 2.0 |
 | [exoplayer-smoothstreaming](https://repo.gradle.org/ui/native/jcenter/com/google/android/exoplayer/exoplayer-smoothstreaming) | 2.13.3, 2.15.1 | Apache License 2.0 |
 | [Experimental annotation](https://developer.android.com/jetpack/androidx) | 1.1.0 | Apache License 2.0 |
-| [Extensions](http://tomtom.com/extensions) | 1.7.0 | Apache License 2.0 |
+| [Extensions](http://tomtom.com/extensions) | 1.7.0, 1.8.0 | Apache License 2.0 |
 | [fetlife/android](https://fetlife.com/android) | 1.0.0 | Unknown License |
 | [FindBugs jsr305](http://code.google.com/p/jsr-305) | 3.0.2 | Apache License 2.0 |
 | [flexbox-layout](https://github.com/google/flexbox-layout) | 2.0.1 | Apache License 2.0 |
@@ -200,9 +200,8 @@ This offer is valid for a period of three years from the date of distribution of
 | [JSON-java](https://github.com/stleary/JSON-java) | 20200518 | JSON License |
 | [jsoup](http://jsoup.org) | 1.12.2 | MIT License |
 | [JUnit](https://junit.org/junit5/) | r5.7.0-RC1 | Eclipse Public License 2.0 |
-| [Kotlin](http://kotlin.jetbrains.org) | 1.5.30, 1.7.10 | Apache License 2.0 |
+| [Kotlin](http://kotlin.jetbrains.org) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
 | [Kotlin Libraries bill-of-materials](http://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
-| [Kotlin Stdlib](http://kotlin.jetbrains.org) | 1.6.10, 1.7.10 | Apache License 2.0 |
 | [Kotlin Test Junit](https://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
 | [kotlin-android-extensions-runtime](http://kotlinlang.org/tools/kotlin-android-extensions-runtime/) | 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
 | [kotlin-logging](https://github.com/MicroUtils/kotlin-logging) | 2.1.23 | Apache License 2.0 |
@@ -309,7 +308,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [ThreeTen backport](https://github.com/ThreeTen/threetenbp) | 1.5.0 | BSD 3-clause "New" or "Revised" License |
 | [ThreeTenAbp](https://github.com/JakeWharton/ThreeTenABP/) | 1.3.0 | Apache License 2.0 |
 | [Tink Cryptography API for Android](http://github.com/google/tink) | 1.5.0 | Apache License 2.0 |
-| [Trace Events](http://tomtom.com/traceevents) | 1.7.0 | Apache License 2.0 |
+| [Trace Events](http://tomtom.com/traceevents) | 1.7.0, 1.8.0 | Apache License 2.0 |
 | [utils](http://robolectric.org) | 4.7.3 | MIT License |
 | [VersionedParcelable and friends](http://developer.android.com/tools/extras/support-library.html) | 1.1.1 | Apache License 2.0 |
 | [viewbinding](https://maven.google.com/androidx/databinding/viewbinding/) | 7.1.0, 7.1.3, 7.2.1 | Apache License 2.0 |

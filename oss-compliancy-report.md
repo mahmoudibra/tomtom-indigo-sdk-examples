@@ -1,4 +1,4 @@
-# OSS report for TomTom _IndiGO SDK_ version 1.0.4144-1882
+# OSS report for TomTom _IndiGO SDK_ version 1.0.4146-1883
 
 TomTom will provide on request the source code of software licensed under GPL, LGPL and certain other open source licenses where this is a requirement of the applicable license terms.
 
@@ -97,6 +97,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [Android Support VectorDrawable](http://developer.android.com/tools/extras/support-library.html) | 1.0.1, 1.1.0 | Apache License 2.0 |
 | [Android Tracing](https://developer.android.com/topic/libraries/architecture/index.html) | 1.0.0 | Apache License 2.0 |
 | [Android Transition Support Library](http://developer.android.com/tools/extras/support-library.html) | 1.2.0, 1.4.1 | Apache License 2.0 |
+| [android-backup-extractor](https://github.com/nelenkov/android-backup-extractor) | master-20220809063558-8fdfc5e | Apache License 2.0 |
 | [AndroidX Futures](https://developer.android.com/topic/libraries/architecture/index.html) | 1.0.0 | Apache License 2.0 |
 | [AndroidX Preference](http://developer.android.com/tools/extras/support-library.html) | 1.1.0, 1.2.0 | Apache License 2.0 |
 | [AndroidX Security](http://developer.android.com/tools/extras/support-library.html) | 1.1.0-alpha02 | Apache License 2.0 |
@@ -314,5 +315,4 @@ This offer is valid for a period of three years from the date of distribution of
 | [viewbinding](https://maven.google.com/androidx/databinding/viewbinding/) | 7.1.0, 7.1.3, 7.2.1 | Apache License 2.0 |
 | [Warzone 2100](http://wz2100.net/) | 3.4.0 | GNU General Public License v2.0 or later |
 | [XZ Utils](http://tukaani.org/xz/) | 5.2.2 | (GNU Lesser General Public License v2.1 or later AND Public Domain AND GNU General Public License v2.0 or later AND GNU General Public License v3.0 or later) |
-| [zlainsama/PeacefulSurface](https://minecraft.curseforge.com/projects/peacefulsurface) | 1.19.1-v1 | MIT License |
 | [ZXing Core](http://nexus.sonatype.org/oss-repository-hosting.html/core) | 3.4.1 | Apache License 2.0 |

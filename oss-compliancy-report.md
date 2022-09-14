@@ -1,4 +1,4 @@
-# OSS report for TomTom _IndiGO SDK_ version 1.0.4146-1883
+# OSS report for TomTom _IndiGO SDK_ version 1.0.4152-1886
 
 TomTom will provide on request the source code of software licensed under GPL, LGPL and certain other open source licenses where this is a requirement of the applicable license terms.
 
@@ -12,14 +12,13 @@ This offer is valid for a period of three years from the date of distribution of
 | [@angular/compiler-cli](https://github.com/angular/angular/tree/master/packages/compiler-cli) | 13.0.0-rc.0 | MIT License |
 | [@rokt/react-native-sdk](https://www.npmjs.org/package/@rokt/react-native-sdk) | 2.0.0-alpha.3 | Unknown License |
 | [aacs-annotation-api](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
+| [aacs-annotation-processor](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
 | [aacs-extra](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
-| [aacs_annotation_api](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
-| [aacs_annotation_processor](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
 | [aacscommonutils](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
 | [aacsconstants](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
 | [aacsipc](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
 | [aacstts](https://github.com/alexa/alexa-auto-sdk) | 3.3 | Apache License 2.0 |
-| [aasb](https://github.com/alexa/alexa-auto-sdk) | 3.2, 3.3 | Apache License 2.0 |
+| [aasb](https://github.com/alexa/alexa-auto-sdk) | 3.2, 3.3, 4.1 | Apache License 2.0 |
 | [Accessibility Test Framework](https://code.google.com/p/eyes-free/) | 3.1 | Apache License 2.0 |
 | [Activity](http://developer.android.com/tools/extras/support-library.html) | 1.2.4, 1.3.1 | Apache License 2.0 |
 | [Activity Kotlin Extensions](http://developer.android.com/tools/extras/support-library.html) | 1.2.3, 1.3.1 | Apache License 2.0 |
@@ -117,7 +116,6 @@ This offer is valid for a period of three years from the date of distribution of
 | [asm-analysis](http://asm.objectweb.org/asm-analysis/) | 7.1, 9.2 | BSD 3-clause "New" or "Revised" License |
 | [AssertJ fluent assertions](http://nexus.sonatype.org/oss-repository-hosting.html/assertj-parent-pom/assertj-core) | 3.23.1 | Apache License 2.0 |
 | [AutoValue Annotations](https://github.com/google/auto/auto-value-parent/auto-value-annotations) | 1.7.4 | Apache License 2.0 |
-| [bcml](https://github.com/NiceneNerd/BCML) | 3.9.0b5 | GNU General Public License v3.0 or later |
 | [bleeding182/recyclerviewItemDecorations](https://github.com/bleeding182/recyclerviewItemDecorations) | 20170817-snapshot-c503a5a0 | MIT License |
 | [Bouncy Castle](http://www.bouncycastle.org) | 1.68 | MIT License |
 | [Byte Buddy](http://bytebuddy.net) | 1.11.8, 1.12.10, 1.12.6 | Apache License 2.0 |
@@ -204,7 +202,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [Kotlin](http://kotlin.jetbrains.org) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
 | [Kotlin Libraries bill-of-materials](http://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
 | [Kotlin Test Junit](https://kotlinlang.org/) | 1.7.10 | Apache License 2.0 |
-| [kotlin-android-extensions-runtime](http://kotlinlang.org/tools/kotlin-android-extensions-runtime/) | 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
+| [kotlin-android-extensions-runtime](http://kotlinlang.org/tools/kotlin-android-extensions-runtime/) | 1.6.10, 1.7.10 | Apache License 2.0 |
 | [kotlin-logging](https://github.com/MicroUtils/kotlin-logging) | 2.1.23 | Apache License 2.0 |
 | [kotlin-reflect](https://kotlinlang.org/) | 1.6.10, 1.7.10 | Apache License 2.0 |
 | [kotlin-stdlib-common](http://kotlinlang.org/kotlin-stdlib-common/) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
@@ -236,11 +234,13 @@ This offer is valid for a period of three years from the date of distribution of
 | [LiveData Core Kotlin Extensions](http://developer.android.com/tools/extras/support-library.html) | 2.3.1, 2.4.1, 2.5.1 | Apache License 2.0 |
 | [LiveData Kotlin Extensions](http://developer.android.com/tools/extras/support-library.html) | 2.4.1, 2.5.1 | Apache License 2.0 |
 | [logback-android](https://github.com/tony19/logback-android) | 2.0.0 | Apache License 2.0 |
+| [lunr-languages](https://github.com/MihaiValentin/lunr-languages#readme) | 1.4.0 | Mozilla Public License 1.1 |
 | [maccandroid](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
 | [mapbox/mapbox-navigation-android](https://www.mapbox.com/android-docs/navigation/overview/) | v0.20.0 | MIT License |
 | [Material Components for Android - com.google.android.material:material](http://developer.android.com/tools/extras/support-library.html) | 1.4.0 | Apache License 2.0 |
 | [maven-dependency-resolver](http://robolectric.org) | 4.7.3 | MIT License |
 | [messaging](https://github.com/alexa/alexa-auto-sdk) | 3.1 | Apache License 2.0 |
+| [MihaiValentin/lunr-languages](https://github.com/MihaiValentin/lunr-languages#readme) | 1.4.1 | Mozilla Public License 1.1 |
 | [MockK](http://mockk.io) | 1.12.3 | Apache License 2.0 |
 | [MockK Android](http://mockk.io) | 1.12.3 | Apache License 2.0 |
 | [MockK Android Agent](http://mockk.io) | 1.12.3 | Apache License 2.0 |
@@ -253,7 +253,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [Moshi](https://github.com/square/moshi/moshi) | 1.13.0, 1.9.3 | Apache License 2.0 |
 | [moshi-adapters](https://github.com/square/moshi/moshi-adapters) | 1.13.0 | Apache License 2.0 |
 | [nativeruntime](http://robolectric.org) | 4.7.3 | MIT License |
-| [navigation](https://github.com/alexa/alexa-auto-sdk) | 3.1, 3.3, 4.1 | Apache License 2.0 |
+| [navigation](https://github.com/alexa/alexa-auto-sdk) | 3.1, 3.3 | Apache License 2.0 |
 | [Netty Project](http://netty.io/) | 4.1.69.Final | Apache License 2.0 |
 | [Netty/Transport/Native/KQueue](http://netty.io/netty-transport-native-kqueue/) | 4.1.69.Final | Apache License 2.0 |
 | [Netty/Transport/Native/Unix/Common](http://netty.io/netty-transport-native-unix-common/) | 4.1.69.Final | Apache License 2.0 |
@@ -265,7 +265,8 @@ This offer is valid for a period of three years from the date of distribution of
 | [Org.eclipse.paho.client.mqttv3](https://mvnrepository.com/artifact/org.eclipse.paho/org.eclipse.paho.client.mqttv3) | 1.2.2 | Eclipse Public License 2.0 |
 | [org.jetbrains.kotlin:kotlin-stdlib-jdk7](https://kotlinlang.org/) | 1.5.30, 1.7.10 | Apache License 2.0 |
 | [org.jetbrains.kotlin:kotlin-stdlib-jdk8](https://kotlinlang.org/) | 1.5.30, 1.6.10, 1.7.10 | Apache License 2.0 |
-| [Parcelize Runtime](https://kotlinlang.org/) | 1.6.10, 1.6.21, 1.7.10 | Apache License 2.0 |
+| [Parcelize Runtime](https://kotlinlang.org/) | 1.6.10, 1.7.10 | Apache License 2.0 |
+| [phonecontrol](https://github.com/alexa/alexa-auto-sdk) | 4.1 | Apache License 2.0 |
 | [platform/dalvik dx](http://nexus.sonatype.org/oss-repository-hosting.html/dalvik-dx) | 9.0.0_r3 | Apache License 2.0 |
 | [pluginapi](http://robolectric.org) | 4.7.3 | MIT License |
 | [pnpm](https://github.com/pnpm/pnpm) | 0.0.0-202117201839 | MIT License |
@@ -293,11 +294,11 @@ This offer is valid for a period of three years from the date of distribution of
 | [RxJava](https://github.com/ReactiveX/RxJava) | 3.0.4 | Apache License 2.0 |
 | [sandbox](http://robolectric.org) | 4.7.3 | MIT License |
 | [SavedState Kotlin Extensions](https://developer.android.com/jetpack/androidx) | 1.1.0 | Apache License 2.0 |
-| [Sentry SDK](https://github.com/getsentry/sentry-java) | 6.4.0 | MIT License |
-| [sentry-android-core](https://sentry.io) | 6.4.0 | MIT License |
-| [sentry-android-ndk](https://sentry.io) | 6.4.0 | MIT License |
-| [Sentry-Java client](https://github.com/getsentry/sentry-java/sentry) | 6.4.0 | MIT License |
-| [Sentry-Java for Android](https://github.com/getsentry/sentry-java/sentry-android) | 6.4.0 | MIT License |
+| [Sentry SDK](https://github.com/getsentry/sentry-java) | 6.4.1 | MIT License |
+| [sentry-android-core](https://sentry.io) | 6.4.1 | MIT License |
+| [sentry-android-ndk](https://sentry.io) | 6.4.1 | MIT License |
+| [Sentry-Java client](https://github.com/getsentry/sentry-java/sentry) | 6.4.1 | MIT License |
+| [Sentry-Java for Android](https://github.com/getsentry/sentry-java/sentry-android) | 6.4.1 | MIT License |
 | [shadowapi](http://robolectric.org) | 4.7.3 | MIT License |
 | [SILGraphite: rendering non-roman scripts](http://sourceforge.net/projects/silgraphite) | 1.3.0, 1.3.12 | GNU Lesser General Public License v2.1 or later |
 | [SLF4J API Module](http://www.slf4j.org) | 1.7.32 | MIT License |
@@ -306,6 +307,7 @@ This offer is valid for a period of three years from the date of distribution of
 | [texlive-bin](https://www.tug.org/texlive/) | 2019.20190311.50335 | (LaTeX Project Public License v1.3c OR GNU General Public License v2.0 or later) |
 | [text-to-speech](https://github.com/alexa/alexa-auto-sdk) | 3.1 | Apache License 2.0 |
 | [text-to-speech-provider](https://github.com/alexa/alexa-auto-sdk) | 3.3 | Apache License 2.0 |
+| [The FreeType Project](http://www.freetype.org/) | 2.10.0, 2.11.0 | Freetype Project License |
 | [ThreeTen backport](https://github.com/ThreeTen/threetenbp) | 1.5.0 | BSD 3-clause "New" or "Revised" License |
 | [ThreeTenAbp](https://github.com/JakeWharton/ThreeTenABP/) | 1.3.0 | Apache License 2.0 |
 | [Tink Cryptography API for Android](http://github.com/google/tink) | 1.5.0 | Apache License 2.0 |
